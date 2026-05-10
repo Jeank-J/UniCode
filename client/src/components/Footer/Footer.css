@@ -1,0 +1,142 @@
+.main-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e1e4e8;
+  padding: 60px 0 30px 0;
+  margin-top: auto; /* Empuja el footer al fondo si usas Flexbox en el layout */
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Logo y descripción */
+.footer-logo {
+  margin-bottom: 15px;
+  height: 24px !important;
+}
+
+.footer-logo-text {
+  font-weight: 700;
+  font-size: 18px;
+  color: #2c3e50;
+  margin-left: 10px;
+}
+
+.footer-description {
+  color: #7f8c8d;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+/* Secciones de enlaces */
+.footer-section h4 {
+  color: #2c3e50;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+  color: #5c6370;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #3498db;
+}
+
+/* Social & Contact */
+.footer-section p {
+  color: #5c6370;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icon {
+  font-size: 20px;
+  cursor: pointer;
+  filter: grayscale(1);
+  transition: filter 0.2s;
+}
+
+.social-icon:hover {
+  filter: grayscale(0);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  border-top: 1px solid #f0f2f5;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #bdc3c7;
+  font-size: 13px;
+}
+
+.footer-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2ecc71;
+  font-weight: 600;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
