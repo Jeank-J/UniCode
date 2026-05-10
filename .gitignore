@@ -1,0 +1,15 @@
+# Node dependencies
+node_modules/
+
+# Vite build output
+dist/
+dist-ssr/
+*.local
+
+# Environment variables
+.env
+.env.local
+
+# Editor folders
+.vscode/
+.idea/
