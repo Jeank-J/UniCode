@@ -1,52 +1,30 @@
 .profile-page-container {
   padding: 40px 20px;
-  background-color: #f0f2f5;
-  min-height: 100vh;
+  background-color: var(--bg-light, #f0f2f5);
+  min-height: calc(100vh - 150px);
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .profile-card {
   background: #fff;
-  border: 1px solid #e1e4e8;
+  border: 1px solid var(--border-color, #e1e4e8);
   border-radius: 8px;
   width: 100%;
   max-width: 1000px;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-/* Tabs */
-.profile-tabs {
-  display: flex;
-  background: #f8f9fa;
-  border-bottom: 1px solid #e1e4e8;
-  padding: 0 10px;
+.profile-dynamic-body {
+  padding: 30px;
+  min-height: 400px;
 }
 
-.tab {
-  background: none;
-  border: none;
-  padding: 10px 15px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #5c6370;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-.tab.active {
-  background: #fff;
-  border: 1px solid #e1e4e8;
-  border-bottom-color: transparent;
-  margin-bottom: -1px;
-  border-radius: 4px 4px 0 0;
-  color: #2c3e50;
-}
-
-/* Layout */
+/* Layout específico para UserInfo (Estilo Codeforces) */
 .profile-content {
   display: flex;
-  padding: 30px;
   gap: 40px;
 }
 
@@ -54,21 +32,20 @@
   flex: 1;
 }
 
-/* Header & Rank */
-.rank-title.pupil {
-  color: #008000; /* Verde Pupil de Codeforces */
+.rank-title {
   font-weight: 700;
   font-size: 18px;
 }
+.rank-title.pupil { color: var(--success-green, #008000); }
 
 .profile-username {
   font-size: 32px;
   margin: 5px 0;
-  color: #008000;
+  color: var(--success-green, #008000);
 }
 
 .user-meta {
-  color: #5c6370;
+  color: var(--text-gray, #5c6370);
   font-size: 14px;
   line-height: 1.6;
 }
@@ -78,7 +55,6 @@
   cursor: pointer;
 }
 
-/* Stats */
 .stats-list {
   list-style: none;
   padding: 0;
@@ -88,7 +64,7 @@
 .stats-list li {
   margin-bottom: 12px;
   font-size: 15px;
-  color: #2c3e50;
+  color: var(--primary-dark, #2c3e50);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -96,7 +72,7 @@
 
 .rating-value {
   font-weight: 700;
-  color: #008000;
+  color: var(--success-green, #008000);
 }
 
 .max-rating {
@@ -105,17 +81,16 @@
 }
 
 .status-online {
-  color: #008000;
+  color: var(--success-green, #008000);
   font-weight: 700;
 }
 
-/* Photo */
 .profile-photo-column {
   width: 250px;
 }
 
 .photo-wrapper {
-  border: 1px solid #dfe1e6;
+  border: 1px solid var(--border-color, #dfe1e6);
   padding: 10px;
   text-align: center;
 }
@@ -131,28 +106,26 @@
   font-size: 12px;
 }
 
-.photo-footer a {
-  color: #3498db;
+.photo-footer a, .action-link {
+  color: var(--primary-blue, #3498db);
   text-decoration: none;
 }
 
-.action-link {
-  color: #0000ff;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.action-link:hover {
+.action-link:hover, .photo-footer a:hover {
   text-decoration: underline;
 }
 
+/* Animación para el cambio de pestañas */
+.tab-view {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 768px) {
-  .profile-content {
-    flex-direction: column-reverse;
-  }
-  .profile-photo-column {
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
-  }
+  .profile-content { flex-direction: column-reverse; }
+  .profile-photo-column { width: 100%; max-width: 200px; margin: 0 auto; }
 }
